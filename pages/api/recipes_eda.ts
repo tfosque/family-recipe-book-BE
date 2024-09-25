@@ -6,16 +6,15 @@ export default async function handler(
   res: NextApiResponse
 ) {
   const { query } = req;
-  const str = query.str;
+  const filterQuery = req.query.filter;
+  console.log("ZZZ:filterQuery", filterQuery);
 
   // Edamam API credentials
   const APP_ID = "d9b1cf2a&app"; //process.env.EDAMAM_APP_ID;
   const APP_KEY = "c5766ec9ad2e1b022e60988c157c48f5"; // process.env.EDAMAM_APP_KEY;
 
   // Construct the API URL with query parameters
-  const edamamUrl =
-    "https://api.edamam.com/api/recipes/v2?type=public&beta=true&q=chicken&app_id=d9b1cf2a&app_key=c5766ec9ad2e1b022e60988c157c48f5%09";
-  const url = `https://api.edamam.com/api/recipes/v2?type=public&beta=true&q="steak"&app_id=${APP_ID}&app_key=${APP_KEY}`;
+  const url = `https://api.edamam.com/api/recipes/v2?type=public&beta=true&q="${filterQuery}"&app_id=${APP_ID}&app_key=${APP_KEY}`;
 
   if (req.method === "GET") {
     // Handle GET request
