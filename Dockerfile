@@ -8,6 +8,8 @@ WORKDIR /app
 COPY package*.json ./
 RUN npm ci
 
+ENV MONGODB_URI mongodb+srv://tfosque:fosque14@familybookcluster.nraprzf.mongodb.net/family-book-db?retryWrites=true&w=majority
+
 # Copy app source
 COPY . .
 
