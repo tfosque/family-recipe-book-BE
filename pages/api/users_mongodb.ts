@@ -2,6 +2,7 @@ import clientPromise from "../../lib/mongodb";
 import { NextApiRequest, NextApiResponse } from "next";
 import { MongoClient } from "mongodb";
 import jwt from "jsonwebtoken";
+import cors from "../../lib/app-middleware";
 
 const database = "family-book-db";
 const collection = "users";
@@ -14,6 +15,8 @@ const db = client.db(database);
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   // generateAndStoreToken("tfosque");
   //
+  await cors(req, res);
+
   try {
     const users = await db
       .collection(collection)

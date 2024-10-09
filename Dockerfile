@@ -12,7 +12,7 @@ RUN npm ci
 COPY . .
 
 # ... other Dockerfile instructions ...
-COPY .env.local /app/.env
+COPY .env.local .env.local
 
 # Build the Next.js app
 RUN npm run build
