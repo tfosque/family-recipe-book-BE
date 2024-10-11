@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const database = "family-book-db";
-  const collection = "edamam_recipes";
+  const collection = "recommendations";
   //
   try {
     const client = clientPromise;
