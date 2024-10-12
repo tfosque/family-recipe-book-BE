@@ -3,7 +3,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const database = "family-book-db";
-  const collection = "recommendations";
+  const collection = "katy_places";
   //
   try {
     const client = clientPromise;
@@ -12,7 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       .collection(collection)
       .find({})
       .sort({ metacritic: -1 })
-      .limit(124)
+      .limit(500)
       .toArray();
     res.json(recipes);
     console.log({ recipes });

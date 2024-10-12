@@ -12,7 +12,7 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
       .collection(collection)
       .find({})
       .sort({ metacritic: -1 })
-      .limit(24)
+      .limit(124)
       .toArray();
     res.json(recipes);
     console.log({ recipes });
