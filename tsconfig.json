@@ -23,6 +23,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/api/location/v1/search/page.rtf"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "pages/api/v1/location/v1/search/page.rtf", "pages/api/base-mongo-api-route.rtf"],
   "exclude": ["node_modules"]
 }
