@@ -4,23 +4,22 @@ import cors from "../../../../../lib/app-middleware";
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   const database = "family-book-db";
-  const collection = "users";
+  const collection = "random_recipes";
   //
   await cors(req, res);
 
   try {
     const client = clientPromise;
     const db = client.db(database);
-    const food = await db
+    const recipes = await db
       .collection(collection)
       .find({})
       .sort({ metacritic: -1 })
-      .limit(127)
+      .limit(100)
       .toArray();
-
-    console.log({ food });
+    console.log(recipes);
     // res.json(food);
-    res.status(200).json({ message: "Hello from the GET method! USERS" });
+    res.status(200).json(recipes);
   } catch (e) {
     console.error(e);
     res.status(405).json({ message: "Method Not Allowed" });
