@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import axios from "axios";
 
-/* Comment */
+/* Comment 2*/
 
 export default async function handler(
   req: NextApiRequest,
