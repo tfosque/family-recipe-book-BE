@@ -27,7 +27,7 @@ jobs:
         run: npm i
 
       - name: Build Next.js app
-        run: npm run build --prod
+        run: npm run build
 
       - name: Google Auth
         uses: "google-github-actions/auth@v2"
