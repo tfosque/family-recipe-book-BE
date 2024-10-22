@@ -4,7 +4,7 @@ import axios from "axios";
 
 export default async function handler(req: any, res: any) {
   const url =
-    "https://nextjs-be-app-373956278301.us-central1.run.app/api/food_mongodb";
+    "https://nextjs-app-373956278301.us-central1.run.app/api/food_mongodb";
   const { query } = req;
 
   await cors(req, res);
